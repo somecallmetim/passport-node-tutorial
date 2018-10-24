@@ -33,16 +33,16 @@ app.use(cookieParser());
 // Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Passport init
-app.use(passport.initialize());
-app.use(passport.session());
-
 // Express Session
 app.use(session({
     secret: 'secret',
     saveUninitialized: true,
     resave: true
 }));
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Express Validator
 app.use(expressValidator({
